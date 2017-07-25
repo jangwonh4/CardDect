@@ -8,7 +8,7 @@ using System.Text;
  * Date: July 25, 2017
  * Description: This is the Deck class
  * It inherits from the List generic and uses Card as the base type
- * Version: 0.2 - Added the Shuffle Method
+ * Version: 0.3 - Refactored Shuffle Method
  */
 
 namespace COMP123_S2017_Lesson11B
@@ -91,14 +91,12 @@ namespace COMP123_S2017_Lesson11B
 
             for (int card = 0; card < this.Count; card++)
             {
-                firstCard = this.Random.Next(0, 52);
-                secondCard = this.Random.Next(0, 52);
+                firstCard = this.Random.Next(0, this.Count);
+                secondCard = this.Random.Next(0, this.Count);
 
                 tempCard = (Card)this[secondCard].Clone();
-                this[secondCard].Face = this[firstCard].Face;
-                this[secondCard].Suit = this[firstCard].Suit;
-                this[firstCard].Face = tempCard.Face;
-                this[firstCard].Suit = tempCard.Suit;
+                Card.OverWrite(this[secondCard], this[firstCard]);
+                Card.OverWrite(this[firstCard], tempCard);
             }
         }
     }
