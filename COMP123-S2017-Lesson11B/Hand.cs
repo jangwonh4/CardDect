@@ -25,7 +25,7 @@ namespace COMP123_S2017_Lesson11B
         protected override void _initialize()
         {
             // STUB
-           // this method is empty
+            // this method is empty
         }
 
         // PUBLIC METHODS
@@ -50,5 +50,19 @@ namespace COMP123_S2017_Lesson11B
 
             return outputString;
         }
+
+
+        public Card HighestCard(Hand Card1)
+        {
+                var HighestCard =
+                from i in Card1
+                orderby Card1 descending
+                select Card1[0];
+            
+            return Card1[0];
+            
+        }
+           
+
     }
 }

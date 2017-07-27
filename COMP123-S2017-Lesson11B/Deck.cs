@@ -107,5 +107,26 @@ namespace COMP123_S2017_Lesson11B
 
             return topCard;
         }
+        
+        
+        public Hand Deal5()
+        {
+            //List<Card> hand5 = new List<Card>();
+            Hand hand4 = new Hand();
+            for(int i=0;i<5;i++)
+            {
+                int k = 0;
+                Card topCard = this[k];
+                this.RemoveAt(k); // this removes the top card from the deck              
+                //hand5.Add(topCard);
+                hand4.Add(this[k]);
+                
+            }
+
+            // for testing / debugging only
+            Console.WriteLine("Dealt 5 cards - Size of Deck: " + this.Count);
+            
+            return hand4;
+        }
     }
 }
