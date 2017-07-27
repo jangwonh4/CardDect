@@ -8,7 +8,7 @@ using System.Text;
  * Date: July 25, 2017
  * Description: This is the Deck class
  * It inherits from the CardList Abstract class
- * Version: 0.5 - Refactored the ToString method to include a header
+ * Version: 0.6 - Added the Deal1 method
  */
 
 namespace COMP123_S2017_Lesson11B
@@ -92,6 +92,16 @@ namespace COMP123_S2017_Lesson11B
                 Card.OverWrite(this[secondCard], this[firstCard]);
                 Card.OverWrite(this[firstCard], tempCard);
             }
+        }
+
+        /// <summary>
+        /// This method returns the top card of the deck
+        /// </summary>
+        public Card Deal1()
+        {
+            Card topCard = this[0];
+            this.RemoveAt(0); // this removes the top card from the deck
+            return topCard;
         }
     }
 }
